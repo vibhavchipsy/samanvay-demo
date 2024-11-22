@@ -37,7 +37,7 @@
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .menu ul {
         flex-direction: column;
         /* Stack menu items */
@@ -54,11 +54,12 @@
 
     .menu ul.active {
         display: flex;
-        /* Show on toggle */
+        width: 30%;
     }
 
     .menu li {
         margin-bottom: 10px;
+        text-align: center;
     }
 
     .menu li a {
@@ -84,7 +85,7 @@
     }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
     .menu-toggle {
         display: none;
         /* Hide toggle on larger screens */
