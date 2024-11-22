@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center;  
+    height: 100vh;          /* Full viewport height */
+
+}
+.heading1 {
+    color: #CA9C4E;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.36px;
+    font-family: Inter;
+    display: flex;
+    justify-content: center;
+}
+
+ .heading2 {
+    color: #181312;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 35px;
+    font-family: Cormorant Garamond;
+    display: flex;
+    justify-content: center;
+}
+
+.paragraph3 {
+  width: 100%;
+color: #4F4F4F;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+font-family: Inter; 
+text-align: center; /* Centers the text inside the div */
+margin: 0 auto; /* Centers the div itself horizontally */
+
+}
+
+/* Mobile View  */
+
+
+@media (max-width: 600px) {
+body {
+display: block;
+height: auto; /* Remove fixed height for better flexibility */
+padding: 20px; /* Add some padding around the content */
+}
+
+.heading1 {
+font-size: 14px;  /* Reduce font size on smaller screens */
+line-height: 18px;
+}
+
+.heading2 {
+font-size: 24px;  /* Reduce font size for headings */
+line-height: 28px;
+}
+
+.paragraph3 {
+font-size: 14px; /* Reduce font size for text */
+line-height: 22px;
+}
+
+.div1, .div2, .div3 {
+margin-bottom: 15px; /* Add space between the sections */
+}
+}  
