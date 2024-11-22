@@ -1,0 +1,92 @@
+/* General Styles for the Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Styling */
+.logo img {
+    max-height: 50px;
+    /* Adjust logo height */
+    width: auto;
+}
+
+/* Menu Styling */
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    /* Space between menu items */
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+    color: #4CAF50;
+    /* Highlight color on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu ul {
+        flex-direction: column;
+        /* Stack menu items */
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #333;
+        /* Match header background */
+        padding: 10px;
+        border-radius: 8px;
+        display: none;
+        /* Hidden by default */
+    }
+
+    .menu ul.active {
+        display: flex;
+        /* Show on toggle */
+    }
+
+    .menu li {
+        margin-bottom: 10px;
+    }
+
+    .menu li a {
+        color: white;
+    }
+
+    /* Add a toggle button */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+        color: #000;
+    }
+
+    .menu-toggle svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .hamburger {
+        position: absolute;
+        right: 10%;
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+        /* Hide toggle on larger screens */
+    }
+}
