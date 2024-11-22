@@ -9,9 +9,8 @@
 
 /* Logo Styling */
 .logo img {
-    max-height: 50px;
-    /* Adjust logo height */
-    width: auto;
+    width: 80%;
+    height: 100%;
 }
 
 /* Menu Styling */
