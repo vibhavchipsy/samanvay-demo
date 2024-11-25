@@ -37,6 +37,9 @@
 .menu li a:hover:after {
   width: 100%;
 }
+.menu-items-ul {
+  list-style: none;
+}
 .open-menu,
 .close-menu {
   position: absolute;
@@ -88,7 +91,7 @@
   .close-menu {
     display: block;
   }
-  #check:checked ~ .menu {
+  #check:checked ~ ul .menu {
     right: 0;
   }
 }
