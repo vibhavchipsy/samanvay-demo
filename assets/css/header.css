@@ -11,6 +11,8 @@
 }
 .menu {
   display: flex;
+  list-style: none;
+  padding: 0;
 }
 .menu li {
   padding-left: 30px;
@@ -36,9 +38,6 @@
 }
 .menu li a:hover:after {
   width: 100%;
-}
-.menu-items-ul {
-  list-style: none;
 }
 .open-menu,
 .close-menu {
@@ -91,7 +90,7 @@
   .close-menu {
     display: block;
   }
-  #check:checked ~ ul .menu {
+  #check:checked ~ .menu {
     right: 0;
   }
 }
