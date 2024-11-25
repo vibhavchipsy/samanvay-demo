@@ -2,6 +2,10 @@
     font-family: Inter;
 }
 
+:root {
+    --max-width: 1170px;
+}
+
 .container {
     margin: 0 auto;
     padding: 5px 16px;
@@ -55,6 +59,30 @@
     margin: 10px 0;
 }
 
+.swiper-pagination-bullets {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-pagination-bullet {
+    border-radius: 0px !important;
+    width: 25px !important;
+    height: 2px !important;
+}
+
+.swiper-pagination-bullet-active {
+    height: 6px !important;
+}
+
+.swiper-pagination-fraction {
+    margin-top: 15px;
+}
+
+.arrow-icon-text {
+    display: none;
+}
+
 /* For larger screens (Tablets and Desktops) */
 @media (min-width: 768px) {
     .container {
@@ -70,5 +98,13 @@
     .card {
         width: 30%;
         /* 3 cards side by side */
+    }
+
+    .swiper-pagination-bullet {
+        width: 40px !important;
+    }
+
+    .arrow-icon-text {
+        display: block;
     }
 }
