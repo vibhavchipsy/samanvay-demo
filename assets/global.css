@@ -1,0 +1,74 @@
+* {
+    font-family: Inter;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 5px 16px;
+}
+
+.primary-btn {
+    color: #1E1E1E;
+    font-size: 16px;
+    background-color: transparent;
+    padding: 10px 30px 10px 30px;
+    border: 1px solid #D2232A;
+    border-radius: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Section Styling */
+.place-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    height: auto;
+}
+
+.place-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.distance {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.description {
+    font-size: 0.9em;
+    color: #777;
+    margin: 10px 0;
+}
+
+/* For larger screens (Tablets and Desktops) */
+@media (min-width: 768px) {
+    .container {
+        max-width: 1170px;
+    }
+
+    .place-section {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .card {
+        width: 30%;
+        /* 3 cards side by side */
+    }
+}
