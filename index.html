@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,15 +13,7 @@
   <link rel="stylesheet" href="home.css" />
   <link rel="stylesheet" href="/assets/global.css" />
   <link rel="stylesheet" href="/assets/css/header.css" />
-
-  <style>
-    @media (max-width: 767px) {
-      .paragraph3 {
-        font-size: 14px;
-        line-height: 22px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
 </head>
 
 <body>
@@ -47,7 +38,6 @@
                 d="M742 167L500 408 258 167C246 154 233 150 217 150 196 150 179 158 167 167 154 179 150 196 150 212 150 229 154 242 171 254L408 500 167 742C138 771 138 800 167 829 196 858 225 858 254 829L496 587 738 829C750 842 767 846 783 846 800 846 817 842 829 829 842 817 846 804 846 783 846 767 842 750 829 737L588 500 833 258C863 229 863 200 833 171 804 137 775 137 742 167Z">
               </path>
             </svg>
-            >
           </label>
           <!-- </span> -->
         </ul>
@@ -63,6 +53,38 @@
       </ul>
     </nav>
   </header>
+
+  <div class="banner-carousel">
+    <div class="swiper bannerSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div>
+            <img src="/assets/images/home/banner/banner1.png" alt="Udupi Sri Krishna Temple">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <img src="/assets/images/home/banner/banner1.png" alt="Udupi Sri Krishna Temple">
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <img src="/assets/images/home/banner/banner1.png" alt="Udupi Sri Krishna Temple">
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-prev">
+        <object class="left-arrow-icon" type="image/svg+xml" data="/assets/icons/arrow.svg"></object>
+        <div class="arrow-icon-text">Previous</div>
+      </div>
+      <div class="swiper-button-next">
+        <div class="arrow-icon-text">Next</div>
+        <object class="right-arrow-icon" type="image/svg+xml" data="/assets/icons/arrow.svg"></object>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-pagination swiper-pagination-fraction"></div>
+    </div>
+  </div>
 
   <div class="container about">
     <div class="div1">
@@ -96,13 +118,76 @@
       <h2 class="heading2">Suites & Rooms</h2>
       <span class="line"></span>
     </div>
+  </div>
 
-    <div class="div3">
-      <p class="paragraph3">
-        Experience unmatched comfort in our thoughtfully designed suites and
-        rooms, offering the perfect blend of elegance and modern amenities for
-        a memorable stay.
-      </p>
+  <div class="suits-rooms">
+    <div class="swiper suitsRoomsSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div>
+            <img src="/assets/images/home/Udupi Sri Krishna Temple.png" alt="Udupi Sri Krishna Temple">
+            <button class="primary-btn">View Place</button>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <img src="/assets/images/home/Udupi Sri Krishna Temple.png" alt="Udupi Sri Krishna Temple">
+            <button class="primary-btn">View Place</button>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <img src="/assets/images/home/Udupi Sri Krishna Temple.png" alt="Udupi Sri Krishna Temple">
+            <button class="primary-btn">View Place</button>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <img src="/assets/images/home/Udupi Sri Krishna Temple.png" alt="Udupi Sri Krishna Temple">
+            <button class="primary-btn">View Place</button>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <img src="/assets/images/home/Udupi Sri Krishna Temple.png" alt="Udupi Sri Krishna Temple">
+            <button class="primary-btn">View Place</button>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <img src="/assets/images/home/Udupi Sri Krishna Temple.png" alt="Udupi Sri Krishna Temple">
+            <button class="primary-btn">View Place</button>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <img src="/assets/images/home/Udupi Sri Krishna Temple.png" alt="Udupi Sri Krishna Temple">
+            <button class="primary-btn">View Place</button>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <img src="/assets/images/home/Udupi Sri Krishna Temple.png" alt="Udupi Sri Krishna Temple">
+            <button class="primary-btn">View Place</button>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <img src="/assets/images/home/Udupi Sri Krishna Temple.png" alt="Udupi Sri Krishna Temple">
+            <button class="primary-btn">View Place</button>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <img src="/assets/images/home/Udupi Sri Krishna Temple.png" alt="Udupi Sri Krishna Temple">
+            <button class="primary-btn">View Place</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-prev">prev</div>
+      <div class="swiper-button-next">next ></div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-pagination swiper-pagination-fraction"></div>
     </div>
   </div>
 
@@ -260,9 +345,11 @@
   </div>
 
   <script src="/assets/js/header.js"></script>
-</body>
+  <script src="/assets/js/swiper-bundle.min.js"></script>
+  <script src="/assets/js/home.js"></script>
+  <script>
 
-<script src="/assets/js/header.js"></script>
+  </script>
 </body>
 
 </html>

@@ -117,16 +117,68 @@ body {
 
 .image_section_container {
     gap: 40px;
-}
-
-.container+.image_section_container {
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .container {
     padding: 50px;
 }
 
+.swiper-wrapper {
+    padding-bottom: 65px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    top: 97% !important;
+    z-index: 11 !important;
+    white-space: nowrap;
+}
+
+.swiper-button-prev {
+    left: 5% !important;
+}
+
+.swiper-button-next {
+    right: 3% !important;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    content: '' !important;
+}
+
+.swiper-slide img {
+    width: 100%;
+}
+
+.bannerSwiper .swiper-wrapper {
+    padding: 0;
+}
+
+.bannerSwiper .swiper-button-prev,
+.bannerSwiper .swiper-button-next,
+.bannerSwiper .swiper-pagination-fraction {
+    color: white;
+}
+
+.bannerSwiper .swiper-pagination-bullet {
+    background: white !important;
+}
+
+.bannerSwiper .left-arrow-icon,
+.bannerSwiper .right-arrow-icon {
+    padding-right: 5px;
+}
+
+.bannerSwiper .right-arrow-icon {
+    transform: rotate(180deg);
+}
+
+.bannerSwiper img {
+    height: 55vh;
+    object-fit: cover;
+}
 
 .card_heading {
     font-size: 25px;
@@ -197,8 +249,12 @@ body {
         padding-left: 16px;
     }
 
-    .container+.image_section_container {
-        flex-direction: column;
+    .bannerSwiper .swiper-button-prev {
+        top: 88% !important;
+    }
+
+    .bannerSwiper .swiper-button-next {
+        top: 88% !important;
     }
 
     .card2 {
@@ -207,7 +263,7 @@ body {
     }
 }
 
-/* tablets and desktop */
+/* tablets and deskto.swiper-button-next, .swiper-button-prevp */
 @media only screen and (min-width: 768px) {
     .div3 {
         width: 45%;
@@ -223,6 +279,47 @@ body {
     }
 
     .services-card {
+        flex-direction: row;
+    }
+
+    .swiper-button-prev {
+        left: 25% !important;
+    }
+
+    .swiper-button-next {
+        right: 25% !important;
+    }
+
+    .suits-rooms {
+        max-width: var(--max-width);
+        margin: 0 auto;
+    }
+
+    .bannerSwiper .swiper-pagination-bullets {
+        margin-top: -60px;
+    }
+
+    .bannerSwiper .swiper-button-next {
+        margin-top: -70px;
+    }
+
+    .bannerSwiper .swiper-button-prev {
+        margin-top: -73px;
+    }
+
+    .bannerSwiper .swiper-button-prev {
+        left: 38% !important;
+    }
+
+    .bannerSwiper .swiper-button-next {
+        right: 39% !important;
+    }
+
+    .bannerSwiper img {
+        height: auto;
+    }
+
+    .image_section_container {
         flex-direction: row;
     }
 }
