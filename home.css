@@ -41,7 +41,6 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    margin: 20px 0;
 }
 
 
@@ -184,7 +183,6 @@ body {
     .about .div3 {
         width: 95%;
     }
-
     .image_section,
     .host {
         width: 50%;
