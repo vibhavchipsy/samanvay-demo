@@ -128,7 +128,35 @@ body {
 }
 
 
+.card_heading {
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 32px;
+    border-bottom: 3px solid #FF4338;
+    padding: 15px;
+    width: 10%;
+    white-space: nowrap;
+    margin-bottom: 0px;
 
+}
+
+.card_paragraph {
+    text-align: justify;
+    line-height: 24px;
+    padding: 0px 30px 50px 20px;
+}
+
+.card2 {
+    background-color: #CA9C4E;
+    width: 30%;
+    border-radius: 14px;
+    border-bottom: 3px solid #FF4338;
+    margin: 0 auto;
+}
+
+.services-card {
+    gap: 15px;
+}
 
 /* mobile view  */
 @media (max-width: 767px) {
@@ -172,6 +200,11 @@ body {
     .container+.image_section_container {
         flex-direction: column;
     }
+
+    .card2 {
+        width: 100%;
+
+    }
 }
 
 /* tablets and desktop */
@@ -187,6 +220,9 @@ body {
     .image_section,
     .host {
         width: 50%;
+    }
 
+    .services-card {
+        flex-direction: row;
     }
 }
