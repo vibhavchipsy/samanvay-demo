@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main # Track changes on the main branch
+  workflow_dispatch: # To trigger manually
   schedule:
     - cron: "0 0 * * *" # Runs daily at midnight
 
@@ -15,7 +16,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Install CLOC
+      - name: Install Required Tools
         run: sudo apt-get install cloc
 
       - name: Generate LOC Report
@@ -36,10 +37,10 @@ jobs:
           # Display the report
           cat loc_report.csv
 
-      - name: Commit LOC Report
+      - name: Stage and Commit LOC Report
         run: |
           git config user.name "vibhavchipsy"
           git config user.email "vibhavchipsy@gmail.com"
-          git add loc_report.txt
-          git commit -m "Daily LOC Report"
+          git add loc_report.csv
+          git commit -m "Daily LOC Report" || echo "Nothing to commit"
           git push
