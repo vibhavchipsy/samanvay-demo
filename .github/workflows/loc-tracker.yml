@@ -41,8 +41,8 @@ jobs:
             first_commit_date=$(date -I -d "$first_commit_date + 1 day")
           done
 
-          # Display the generated report
-          cat loc_report.csv
+          # Display the generated report for debugging
+          cat loc_report.csv || echo "No report generated"
 
       - name: Stage and Commit LOC Report
         run: |
