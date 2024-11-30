@@ -18,10 +18,23 @@ jobs:
       - name: Install CLOC
         run: sudo apt-get install cloc
 
-      - name: Track Lines of Code
+      - name: Generate LOC Report
         run: |
-          git log --since="yesterday" --pretty=tformat: --numstat | awk '{ added += $1; deleted += $2; total += $1 - $2 } END { print "Date:", strftime("%Y-%m-%d"), "Added:", added, "Deleted:", deleted, "Net Change:", total }' > loc_report.txt
-          cat loc_report.txt
+          # Initialize the report file
+          echo "Date,Added,Deleted,Net Change" > loc_report.csv
+
+          # Loop through all dates since the repo's creation
+          first_commit_date=$(git log --reverse --pretty=format:%as | head -n 1)
+          current_date=$(date +%Y-%m-%d)
+
+          while [ "$first_commit_date" != "$current_date" ]; do
+            git log --since="$first_commit_date 00:00:00" --until="$first_commit_date 23:59:59" --pretty=tformat: --numstat \
+            | awk -v date="$first_commit_date" '{ added += $1; deleted += $2; total += $1 - $2 } END { print date "," added "," deleted "," total }' >> loc_report.csv
+            first_commit_date=$(date -I -d "$first_commit_date + 1 day")
+          done
+
+          # Display the report
+          cat loc_report.csv
 
       - name: Commit LOC Report
         run: |
