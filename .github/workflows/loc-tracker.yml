@@ -23,11 +23,19 @@ jobs:
           first_commit_date=$(git log --reverse --pretty=format:%as | head -n 1)
           current_date=$(date +%Y-%m-%d)
 
+          # Debug: print the first commit date and current date
           echo "First Commit Date: $first_commit_date"
           echo "Current Date: $current_date"
 
+          # Debug: List all commits to see if git log is working
+          echo "List of commits:"
+          git log --reverse --pretty=format:"%ad %an %s"
+
           # Loop through all dates since the repo's creation
           while [ "$(date -d "$first_commit_date" +%Y-%m-%d)" != "$current_date" ]; do
+            # Debug: show the current date in the loop
+            echo "Processing Date: $first_commit_date"
+
             # Get the LOC stats for the current day
             loc_stats=$(git log --since="$first_commit_date 00:00:00" --until="$first_commit_date 23:59:59" --pretty=tformat: --numstat \
             | awk '{ added += $1; deleted += $2; total += $1 - $2 } END { print added "," deleted "," total }')
