@@ -1,12 +1,7 @@
 name: LOC Tracker
 
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch: # To trigger manually
-  schedule:
-    - cron: "0 0 * * *" # Runs daily at midnight
+  workflow_dispatch: # Manual trigger for the workflow
 
 jobs:
   track-loc:
@@ -32,7 +27,7 @@ jobs:
           echo "Current Date: $current_date"
 
           # Loop through all dates since the repo's creation
-          while [ "$first_commit_date" != "$current_date" ]; do
+          while [ "$(date -d "$first_commit_date" +%Y-%m-%d)" != "$current_date" ]; do
             # Get the LOC stats for the current day
             loc_stats=$(git log --since="$first_commit_date 00:00:00" --until="$first_commit_date 23:59:59" --pretty=tformat: --numstat \
             | awk '{ added += $1; deleted += $2; total += $1 - $2 } END { print added "," deleted "," total }')
