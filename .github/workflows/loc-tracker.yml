@@ -3,7 +3,7 @@ name: LOC Tracker
 on:
   push:
     branches:
-      - main # Track changes on the main branch
+      - main
   workflow_dispatch: # To trigger manually
   schedule:
     - cron: "0 0 * * *" # Runs daily at midnight
@@ -21,20 +21,32 @@ jobs:
 
       - name: Generate LOC Report
         run: |
-          # Initialize the report file
+          # Initialize the report file with headers
           echo "Date,Added,Deleted,Net Change" > loc_report.csv
 
-          # Loop through all dates since the repo's creation
+          # Get the first commit date (starting point)
           first_commit_date=$(git log --reverse --pretty=format:%as | head -n 1)
           current_date=$(date +%Y-%m-%d)
 
+          echo "First Commit Date: $first_commit_date"
+          echo "Current Date: $current_date"
+
+          # Loop through all dates since the repo's creation
           while [ "$first_commit_date" != "$current_date" ]; do
-            git log --since="$first_commit_date 00:00:00" --until="$first_commit_date 23:59:59" --pretty=tformat: --numstat \
-            | awk -v date="$first_commit_date" '{ added += $1; deleted += $2; total += $1 - $2 } END { print date "," added "," deleted "," total }' >> loc_report.csv
+            # Get the LOC stats for the current day
+            loc_stats=$(git log --since="$first_commit_date 00:00:00" --until="$first_commit_date 23:59:59" --pretty=tformat: --numstat \
+            | awk '{ added += $1; deleted += $2; total += $1 - $2 } END { print added "," deleted "," total }')
+
+            # If LOC data was found for the day, append it to the report
+            if [ -n "$loc_stats" ]; then
+              echo "$first_commit_date,$loc_stats" >> loc_report.csv
+            fi
+
+            # Move to the next day
             first_commit_date=$(date -I -d "$first_commit_date + 1 day")
           done
 
-          # Display the report
+          # Display the generated report
           cat loc_report.csv
 
       - name: Stage and Commit LOC Report
